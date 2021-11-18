@@ -67,7 +67,7 @@ func writedata(data1 string, args []string) {
 
 	//slice := make([]Dat, 0, 10)
 
-	file, e := os.OpenFile(filepath.Join(data1), os.O_APPEND, 0644)
+	file, e := os.OpenFile(filepath.Join(data1), os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 	if e != nil {
 		fmt.Println("Error is = ", e)
 	}
